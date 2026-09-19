@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { IntroAnimation } from "@/components/intro-animation";
 
 export const metadata: Metadata = {
-  title: "Krypton — AI Data Security",
-  description: "Krypton helps organizations protect sensitive information during employee AI use.",
+  title: "Aronxx Tech — AI Data Security",
+  description: "Aronxx Tech helps organizations protect sensitive information during employee AI use.",
   other: {
     "codex-preview": "development",
   },
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased"><IntroAnimation />{children}</body>
     </html>
   );
 }

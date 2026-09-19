@@ -1,2 +1,2 @@
-import { KryptonPage } from "@/components/krypton-page";
-export default function Home() { return <KryptonPage page="home" />; }
+import { AronxxTechPage } from "@/components/aronxx-tech-page";
+export default function Home() { return <AronxxTechPage page="home" />; }
