@@ -1,0 +1,38 @@
+.page-orb{--px:35%;--py:30%;--orb-a:#7357ff;--orb-b:#40d8ff;--orb-c:#13183d;cursor:pointer;outline:none;isolation:isolate;filter:drop-shadow(0 36px 55px #0008)}
+.page-orb .orb-body{position:absolute;inset:11%;border-radius:44% 56% 61% 39%;background:radial-gradient(circle at var(--px) var(--py),#fff9 0 2%,#fff2 8%,transparent 25%),linear-gradient(138deg,var(--orb-a),var(--orb-c) 54%,var(--orb-b));box-shadow:inset -35px -38px 75px #0008,inset 24px 20px 60px #fff2,0 0 80px color-mix(in srgb,var(--orb-a) 42%,transparent);animation:orbLiquid 8s ease-in-out infinite;transition:filter .35s,transform .55s cubic-bezier(.2,.8,.2,1)}
+.page-orb:hover .orb-body,.page-orb:focus-visible .orb-body{filter:saturate(1.25) brightness(1.12);transform:scale(1.035)}
+.page-orb.orb-active .orb-body{animation-duration:3.2s;transform:scale(.92) rotate(18deg)}
+.page-orb .orb-ring{position:absolute;inset:3%;border:1px solid color-mix(in srgb,var(--orb-b) 50%,transparent);border-radius:50%;transform:rotateX(70deg) rotateZ(20deg);animation:orbRing 12s linear infinite;box-shadow:0 0 20px color-mix(in srgb,var(--orb-b) 26%,transparent)}
+.page-orb .ring-b{inset:17%;transform:rotateY(68deg) rotateZ(30deg);animation-duration:9s;animation-direction:reverse}
+.page-orb .orb-spark{position:absolute;z-index:3;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 9px 3px var(--orb-b);animation:orbSparkA 5s ease-in-out infinite}
+.page-orb .s2{animation-name:orbSparkB;animation-delay:-2.1s}
+.page-orb>span{z-index:4;padding:8px 13px;border:1px solid #ffffff24;border-radius:99px;background:#0508178c;backdrop-filter:blur(10px);text-shadow:0 1px 9px #000;transition:letter-spacing .35s}
+.page-orb:hover>span,.page-orb.orb-active>span{letter-spacing:.31em}
+.page-orb-product{--orb-a:#7657ff;--orb-b:#4ee6ff;--orb-c:#101b4b}.page-orb-product .orb-body{border-radius:36% 64% 48% 52%;animation-name:orbLiquidProduct}
+.page-orb-how-it-works{--orb-a:#2a65ff;--orb-b:#b695ff;--orb-c:#071531}.page-orb-how-it-works .orb-body{border-radius:50%;background:radial-gradient(circle at var(--px) var(--py),#fff8,transparent 18%),repeating-conic-gradient(from 15deg,#7657ff 0 24deg,#121b4b 25deg 58deg,#45dfff 59deg 60deg);animation-name:orbSegmented}.page-orb-how-it-works .orb-ring{border-style:dashed}
+.page-orb-features{--orb-a:#8c70ff;--orb-b:#55f0e4;--orb-c:#141438}.page-orb-features .orb-body{border-radius:22% 55% 28% 62%;clip-path:polygon(50% 0,91% 20%,100% 62%,68% 100%,20% 87%,0 43%);animation-name:orbCrystal}
+.page-orb-solutions{--orb-a:#1f78ff;--orb-b:#64ffc9;--orb-c:#111b49}.page-orb-solutions .orb-body{border-radius:58% 42% 64% 36%;background:radial-gradient(circle at 30% 28%,#fff6,transparent 16%),radial-gradient(circle at 72% 68%,#64ffc966,transparent 20%),linear-gradient(135deg,var(--orb-a),var(--orb-c) 55%,var(--orb-b));animation-name:orbSolutions}
+.page-orb-dashboard{--orb-a:#6448ff;--orb-b:#28dfff;--orb-c:#090d27}.page-orb-dashboard .orb-body{border-radius:28%;background:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px),radial-gradient(circle at var(--px) var(--py),#46ddff99,transparent 22%),linear-gradient(145deg,var(--orb-a),var(--orb-c));background-size:24px 24px,24px 24px,auto,auto;animation-name:orbDashboard}
+.page-orb-pilot{--orb-a:#ff4fc8;--orb-b:#55eaff;--orb-c:#17123a}.page-orb-pilot .orb-body{border-radius:50%;animation-name:orbPulse}
+.page-orb-about{--orb-a:#775cff;--orb-b:#61f1ff;--orb-c:#121837}.page-orb-about .orb-body{border-radius:48% 52%;clip-path:polygon(0 35%,24% 8%,50% 42%,76% 8%,100% 35%,75% 92%,50% 58%,25% 92%);animation-name:orbInfinity}
+.page-orb-careers{--orb-a:#ff5e98;--orb-b:#ffcc5d;--orb-c:#2a153b}.page-orb-careers .orb-body{border-radius:60% 40% 33% 67%;animation-name:orbCareers}
+.page-orb-contact{--orb-a:#266dff;--orb-b:#50ffc5;--orb-c:#0b1636}.page-orb-contact .orb-body{border-radius:50%;background:radial-gradient(circle at center,transparent 0 16%,#45edcb55 17% 18%,transparent 19% 30%,#4b84ff50 31% 32%,transparent 33%),radial-gradient(circle at var(--px) var(--py),#fff8,transparent 18%),linear-gradient(145deg,var(--orb-a),var(--orb-c));animation-name:orbSignal}
+.page-orb-privacy{--orb-a:#2c57d8;--orb-b:#56f1ff;--orb-c:#07152f}.page-orb-privacy .orb-body{border-radius:48% 48% 58% 58%;clip-path:polygon(50% 0,92% 15%,88% 68%,50% 100%,12% 68%,8% 15%);animation-name:orbShield}
+.page-orb-terms{--orb-a:#7657ff;--orb-b:#9bb4ff;--orb-c:#12162e}.page-orb-terms .orb-body{border-radius:18%;clip-path:polygon(15% 0,85% 0,100% 15%,100% 85%,85% 100%,15% 100%,0 85%,0 15%);animation-name:orbTerms}
+@keyframes orbLiquid{50%{border-radius:61% 39% 35% 65%;transform:rotate(8deg) scale(.96)}}
+@keyframes orbLiquidProduct{50%{border-radius:58% 42% 67% 33%;transform:rotate(-9deg) scale(.95)}}
+@keyframes orbSegmented{50%{transform:rotate(30deg) scale(.96);filter:hue-rotate(22deg)}}
+@keyframes orbCrystal{50%{transform:rotateY(24deg) rotateZ(8deg) scale(.94);clip-path:polygon(45% 2%,96% 31%,88% 78%,48% 100%,4% 72%,10% 23%)}}
+@keyframes orbSolutions{50%{border-radius:34% 66% 42% 58%;transform:rotate(-10deg)}}
+@keyframes orbDashboard{50%{transform:perspective(700px) rotateX(12deg) rotateY(-12deg);background-position:8px 12px,8px 12px,center,center}}
+@keyframes orbPulse{50%{transform:scale(.91);box-shadow:inset -35px -38px 75px #0008,0 0 0 28px #ff4fc80b,0 0 100px #ff4fc85c}}
+@keyframes orbInfinity{50%{transform:rotateY(180deg) scale(.95)}}
+@keyframes orbCareers{50%{border-radius:32% 68% 64% 36%;transform:translateY(-10px) rotate(7deg)}}
+@keyframes orbSignal{50%{transform:scale(.96);filter:hue-rotate(28deg)}}
+@keyframes orbShield{50%{transform:perspective(700px) rotateY(18deg) translateY(-8px)}}
+@keyframes orbTerms{50%{transform:rotate(45deg) scale(.88)}}
+@keyframes orbRing{to{transform:rotateX(70deg) rotateZ(380deg)}}
+@keyframes orbSparkA{0%,100%{transform:translate(-155px,-70px);opacity:.2}50%{transform:translate(165px,85px);opacity:1}}
+@keyframes orbSparkB{0%,100%{transform:translate(135px,-115px);opacity:1}50%{transform:translate(-145px,130px);opacity:.25}}
+@media(max-width:680px){.page-orb .orb-spark{display:none}}
+@media(prefers-reduced-motion:reduce){.page-orb .orb-body,.page-orb .orb-ring,.page-orb .orb-spark{animation:none!important}}

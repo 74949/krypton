@@ -56,7 +56,7 @@ export function IntroAnimation() {
         <div className="chip-shadow" />
       </div>
 
-      <div className="intro-brand"><span className="brand-mark">AT</span><b>ARONXX TECH</b><i>SECURE AI GATEWAY</i></div>
+      <div className="intro-brand"><span className="brand-mark"><Image src="/aronxx-tech-logo.png" alt="" width={1536} height={1024} priority /></span><b>ARONXX TECH</b><i>SECURE AI GATEWAY</i></div>
       <div className="boot-status">
         <div className="status-copy"><span>HARDWARE ROOT OF TRUST</span><b>ESTABLISHING SECURE CHANNEL</b></div>
         <div className="boot-track"><i /></div>
