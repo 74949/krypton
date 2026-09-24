@@ -1,21 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Binary, Braces, CircleDotDashed, Cpu, DatabaseZap, Fingerprint, GitBranch, Network, Orbit, Radar, ShieldEllipsis, Unplug, Waves } from "lucide-react";
 
 const orbitNodes=["Context envelope","Signal lattice","Policy fabric","Decision plane","Assurance channel","Secure continuation"];
 
 function InteractiveCore(){
-  const [expanded,setExpanded]=useState(false);
-  const toggle=()=>setExpanded(value=>!value);
-  return <div className={`interactive-architecture ${expanded?"is-expanded":""}`} data-open={expanded?"true":"false"} onClick={toggle}>
+  const [phase,setPhase]=useState<"idle"|"cracking"|"expanded">("idle");
+  const expanded=phase==="expanded";
+  useEffect(()=>{if(phase!=="cracking")return;const timer=window.setTimeout(()=>setPhase("expanded"),720);return()=>window.clearTimeout(timer)},[phase]);
+  const toggle=()=>{if(phase==="cracking")return;setPhase(expanded?"idle":"cracking")};
+  return <div className={`interactive-architecture is-${phase}`} data-open={expanded?"true":"false"} onClick={toggle}>
     <div className="cosmic-field" aria-hidden="true">{Array.from({length:36},(_,i)=><i key={i} style={{"--angle":`${i*47}deg`,"--size":`${2+i%3}px`,"--distance":`${75+(i%9)*33}px`,"--distance-end":`${110+(i%9)*36}px`,"--duration":`${4+(i%7)*.7}s`,"--delay":`${i*-.13}s`,"--opacity":`${.28+(i%5)*.12}`} as React.CSSProperties}/>)}</div>
     <div className="galaxy-wave" aria-hidden="true"/>
     <button className="split-core" type="button" aria-expanded={expanded} onKeyDown={event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();event.stopPropagation();toggle()}}}>
       <span className="core-slices" aria-hidden="true">{Array.from({length:6},(_,i)=><i key={i} style={{"--slice":i} as React.CSSProperties}/>)}</span>
-      <Braces/><b>AX-Φ</b><small>{expanded?"Collapse system":"Explore system"}</small>
+      <span className="core-cracks" aria-hidden="true">{Array.from({length:9},(_,i)=><i key={i} style={{"--crack-angle":`${i*40-12}deg`,"--crack-length":`${42+(i%4)*14}px`} as React.CSSProperties}/>)}</span>
+      <Braces/><b>AX-Φ</b><small>{phase==="cracking"?"Core breach":expanded?"Rebuild system":"Explore system"}</small>
     </button>
+    <div className="core-blast" aria-hidden="true"><i/><i/><i/></div>
+    <div className="core-fragments" aria-hidden="true">{Array.from({length:14},(_,i)=><i key={i} style={{"--fragment-angle":`${i*(360/14)}deg`,"--fragment-distance":`${118+(i%4)*28}px`,"--fragment-delay":`${(i%3)*.035}s`} as React.CSSProperties}/>)}</div>
     <div className="orbit-nodes" aria-hidden={!expanded}>{orbitNodes.map((label,i)=><div className="orbit-node" key={label} style={{"--delay":`${i*-.55}s`} as React.CSSProperties}><span>{String(i+1).padStart(2,"0")}</span><b>{label}</b></div>)}</div>
-    <p className="core-instruction">{expanded?"Six control planes revealed — click anywhere to close.":"Click or tap the centre to reveal six control planes."}</p>
+    <p className="core-instruction">{phase==="cracking"?"Core integrity falling — control planes releasing…":expanded?"Six control planes revealed — click anywhere to rebuild.":"Click or tap the centre to reveal six control planes."}</p>
   </div>
 }
 
